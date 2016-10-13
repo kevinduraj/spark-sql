@@ -1,4 +1,4 @@
-name := "spark-sql-examples"
+name := "spark-sql"
  
 version := "1.0"
 

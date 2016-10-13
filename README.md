@@ -11,6 +11,7 @@ root
  |-- sex: string (nullable = true)
  |-- count: string (nullable = true)
 
+SELECT name, count(*) TotalByCounty FROM names GROUP BY name ORDER BY TotalByCounty DESC
 +--------+-------------+                                                        
 |name    |TotalByCounty|
 +--------+-------------+
@@ -22,14 +23,15 @@ root
 |SOPHIA  |283          |
 |MASON   |282          |
 |NOAH    |279          |
-|ETHAN   |267          |
 |AVA     |267          |
+|ETHAN   |267          |
 |MADISON |259          |
 |LIAM    |259          |
 +--------+-------------+
 only showing top 12 rows
 
-+--------+----------+
+SELECT name, sum(count) GrandTotal FROM names GROUP BY name ORDER BY GrandTotal DESC
++--------+----------+                                                           
 |name    |GrandTotal|
 +--------+----------+
 |MICHAEL |11565.0   |
@@ -45,5 +47,5 @@ only showing top 12 rows
 |RYAN    |9063.0    |
 |OLIVIA  |8903.0    |
 +--------+----------+
-only showing top 12 row
+only showing top 12 rows
 ```

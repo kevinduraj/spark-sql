@@ -1,5 +1,5 @@
-Spark 2.0 SQL 
-=============
+Spark 2.0 - SQL on DataFrame 
+============================
 
 
 ###Result

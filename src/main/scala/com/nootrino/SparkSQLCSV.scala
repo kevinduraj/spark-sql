@@ -20,9 +20,13 @@ object SparkSQLCSV {
     //df.registerTempTable("names")
     df.createOrReplaceTempView("names")
 
-    //println("-" * 100)
-    val sqlDF = spark.sql("SELECT name, count(*) total FROM names GROUP BY name ORDER BY total DESC")
-    sqlDF.show(25, false)
+    val sql1 = "SELECT name, count(*) TotalByCounty FROM names GROUP BY name ORDER BY TotalByCounty DESC"
+    val sqlDF1 = spark.sql(sql1)
+    sqlDF1.show(12, false)
+
+    val sql2 = "SELECT name, sum(count) GrandTotal FROM names GROUP BY name ORDER BY GrandTotal DESC"
+    val sqlDF2 = spark.sql(sql2)
+    sqlDF2.show(12, false)
 
     spark.stop()
 
